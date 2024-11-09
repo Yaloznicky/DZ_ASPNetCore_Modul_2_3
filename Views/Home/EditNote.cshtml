@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Редактирование заметки";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label"></label>
+        <input type="text" name="title" class="form-control" value=@ViewBag.edit.title placeholder="Название заметки">
+    </div>
+    <div class="mb-3">
+        <label class="form-label"></label>
+        <textarea type="text" name="text" class="form-control" style="height: 200px;" placeholder="Текст заметки">@ViewBag.edit.text</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Дата создания/измениения заметки</label>
+        <input type="text" name="date" class="form-control" value=@ViewBag.edit.date disabled>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Тег</label>
+        <input type="text" name="teg" value=@ViewBag.edit.teg class="form-control">
+    </div>
+    <button type="submit" name="action" value="save" class="btn btn-primary">Сохранить</button>
+    <button type="submit" name="action" value="cancel" class="btn btn-secondary">Отменить</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model List<NoteModel>
+@{
+	ViewData["Title"] = "Новая заметка";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label"></label>
+        <input type="text" name="title" class="form-control" placeholder="Название заметки">
+    </div>
+    <div class="mb-3">
+        <label class="form-label"></label>
+        <textarea type="text" name="text" class="form-control" style="height: 200px;" placeholder="Текст заметки"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Дата создания/измениения заметки</label>
+        <input type="text" name="date" class="form-control" value="@DateTime.Now.ToShortDateString()" disabled>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Тег</label>
+        <input type="text" name="teg" class="form-control">
+    </div>
+    <button type="submit" name="action" value="save" class="btn btn-primary">Добавить</button>
+    <button type="submit" name="action" value="cancel" class="btn btn-secondary">Отменить</button>
+</form>
